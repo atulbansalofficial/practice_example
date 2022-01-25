@@ -5,11 +5,11 @@ function Todo() {
     skil: "",
     skilExp: "",
   });
-  const [print, setPrint] = useState(false);
+  const [print, setPrint] = useState([]);
   const onSubmit = (e) => {
-    e.preventDefault();
     console.log(data.skil, data.skilExp);
-    setPrint(true);
+    const getIdData = { id: new Date().getTime().toString(), data };
+    setPrint([...print, getIdData]);
   };
   const onChange = (e) => {
     console.log(e.target.value);
@@ -32,10 +32,15 @@ function Todo() {
       }
     });
   };
+  const Trash = (index) => {
+    const updatedItem = print.filter((elem) => index !== elem.id);
+    console.log(updatedItem);
+    setPrint(updatedItem);
+  };
 
   return (
     <div>
-      <form onSubmit={onSubmit}>
+      <form>
         <input type="text" value={data.skil} name="skil" onChange={onChange} />
         <input
           type="text"
@@ -43,16 +48,23 @@ function Todo() {
           name="skilExp"
           onChange={onChange}
         />
-        <input type="submit" value={"Add"} />
+        <input type="button" onClick={onSubmit} value={"Add"} />
       </form>
-
-      {print ? (
-        <div>
-          <h3>
-            {data.skil} {data.skilExp}
-          </h3>
-        </div>
-      ) : null}
+      {print.map((item, i) => {
+        return (
+          <ul key={item.id} type="none">
+            <li>
+              {item?.data.skil} - {item?.data.skilExp}
+              <span
+                onClick={(e) => Trash(item.id)}
+                style={{ color: "red", cursor: "pointer" }}
+              >
+                trash
+              </span>
+            </li>
+          </ul>
+        );
+      })}
     </div>
   );
 }
