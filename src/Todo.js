@@ -49,6 +49,47 @@ function Todo() {
 
   return (
     <div className="container">
+
+<div className="col-md-12 border border-light bg-light">
+                  <div className="input-group   d-flex justify-content-between">
+                    <p>S.No</p>
+                    <p>Pre-requisite</p>
+                    <p>Action</p>
+                  </div>
+                  {/* java Certification edit delete */}
+                  <div className="col-md-12 mb-3 ">
+                    <div className="input-group">
+                      <div
+                        className="input-group-text bg-light"
+                        id="btnGroupAddon2"
+                      >
+                        1.
+                      </div>
+                      <input
+                        type="text"
+                        className="form-control"
+                        placeholder="Java Certification from Udemy"
+                        aria-label="Input group example"
+                        aria-describedby="btnGroupAddon2"
+                      />
+                      <button
+                        className="btn btn-outline-secondary"
+                        type="button"
+                      >
+                        <i className="fa fa-trash" aria-hidden="true"></i>
+                      </button>
+                      <button
+                        className="btn btn-outline-secondary"
+                        type="button"
+                      >
+                        <i className="fa fa-edit" aria-hidden="true"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                
+
+
       <input
         type="text"
         className="form-control"
@@ -72,7 +113,7 @@ function Todo() {
       )}
 
       {dataValue.map((item, i) => (
-        <div key={item.id}>
+        <div key={item.id} className="col-md-12 mb-3 ">
           <h3>
             <span>{i + 1} </span>
             {item.name}
