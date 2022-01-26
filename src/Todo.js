@@ -1,24 +1,23 @@
 import React, { useState } from "react";
 
-function Todo() {
+function Todo(props) {
   const [data, setData] = useState({
     skil: "",
     skilExp: "",
   });
   const [print, setPrint] = useState([]);
+  
   const onSubmit = (e) => {
-    console.log(data.skil, data.skilExp);
     const getIdData = { id: new Date().getTime().toString(), data };
     setPrint([...print, getIdData]);
+    props.alert(print);
+    console.log(print);
   };
   const onChange = (e) => {
-    console.log(e.target.value);
-    console.log(e.target.name);
     const value = e.target.value;
     const name = e.target.name;
 
     setData((preValue) => {
-      console.log(preValue);
       if (name === "skil") {
         return {
           skil: value,

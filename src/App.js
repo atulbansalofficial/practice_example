@@ -1,11 +1,13 @@
 import React from "react";
 import Todo from "./Todo";
 
-function App() {
+function App(props) {
+  function ParentAlert(data) {
+    console.log("Data", data);
+  }
   return (
     <div>
-     
-      <Todo />
+      <Todo alert={ParentAlert} />
     </div>
   );
 }
