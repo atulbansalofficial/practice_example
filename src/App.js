@@ -1,13 +1,10 @@
 import React from "react";
-import Todo from "./Todo";
+import Education from "./Education";
 
-function App(props) {
-  function ParentAlert(data) {
-    console.log("Data", data);
-  }
+function App() {
   return (
     <div>
-      <Todo alert={ParentAlert} />
+      <Education />
     </div>
   );
 }
