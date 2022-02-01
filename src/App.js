@@ -1,5 +1,6 @@
 import React from "react";
-import Todo from "./Todo";
+// import Todo from "./Todo";
+import TableInput from "./TableInput";
 
 function App(props) {
   function ParentAlert(data) {
@@ -7,7 +8,8 @@ function App(props) {
   }
   return (
     <div>
-      <Todo alert={ParentAlert} />
+      {/* <Todo alert={ParentAlert} /> */}
+      <TableInput />
     </div>
   );
 }
