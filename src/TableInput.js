@@ -5,21 +5,21 @@ function TableInput() {
   const [jobTital, setjobTital] = useState([]);
   console.log(jobTital);
 
-  axios
-    .get(
-      "http://ec2-3-109-108-73.ap-south-1.compute.amazonaws.com/api/v1/employer/job?luid=61f23762a6b6f90afa49cd4c"
-    )
-    .then(function (response) {
-      // handle success
-      console.log(response.data[0]);
-    })
-    .catch(function (error) {
-      // handle error
-      console.log(error);
-    })
-    .then(function () {
-      // always executed
-    });
+  // axios
+  //   .get(
+  //     "http://ec2-3-109-108-73.ap-south-1.compute.amazonaws.com/api/v1/employer/job?luid=61f23762a6b6f90afa49cd4c"
+  //   )
+  //   .then(function (response) {
+  //     // handle success
+  //     console.log(response.data[0]);
+  //   })
+  //   .catch(function (error) {
+  //     // handle error
+  //     console.log(error);
+  //   })
+  //   .then(function () {
+  //     // always executed
+  //   });
 
   return (
     <div>
